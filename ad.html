@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad Page</title>
+</head>
+<body>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            show_8859968("preload")
+                .then(() => {
+                    console.log("Ad is ready inside iframe");
+                    show_8859968("inline"); // Load the ad inside the iframe
+                })
+                .catch((error) => {
+                    console.error("Failed to preload ad:", error);
+                });
+        });
+    </script>
+</body>
+</html>
